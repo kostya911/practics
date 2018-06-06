@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Реєстрація</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'general/css/style.css' %}">
+	<link rel="icon" href="{% static 'general/image/spid.png' %}" type="image/x-icon">
+	<script src="{% static 'general/js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{% static 'tester/js/loader.js' %}"></script>
+</head>
+
+<body>
+	<div class="Container">
+		<header>
+			<div class="Header">
+				<h1>SPIDTest</h1>
+			</div>
+		</header>
+
+		<nav class="NavTop">
+			<a href="../test"><b>Головна</b></a>
+			<a href="../history"><b>Історія</b></a>
+			<a href="../signup" class="navtop"><b>Реєстрація</b></a>
+			<a href="../signin"><b>Увійти</b></a>
+		</nav>
+
+		<main>
+			<form action="#" id="formReg">
+				<p>
+					<label for="logun">Введіть логін:</label>
+					<input id="login" type="text" placeholder="Введіть логін:" title="Введіть логін. Приклад: vasya228" required autofocus>
+				</p>
+				<p>
+					<label for="pass">Введіть пароль:</label>
+					<input name = "pass" id="pass" type="password" placeholder="Введіть пароль" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Латыница + нижний регистр + верхний регистр + цифры,  без спецсимволов. Пример: asd12GDew" required>
+				</p>
+				<p>
+					<label for="pass1">Повторіть пароль:</label>
+					<input name="pass1" id="pass1" type="password" placeholder="Повторите пароль" title="Латыница + нижний регистр + верхний регистр + цифры,  без спецсимволов. Пример: asd12GDew" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required>
+				</p>
+				<p>
+					<input type="submit" value="Зареєструватись" id="submit" class="Submit">
+				</p>
+
+			</form>
+		</main>
+
+		<footer>
+			<span>© Практика 2018. Тест на ВІЛ (Високошвидкісний Інтернет Літає?). Всі права захищені. v.2.1.1</span>
+		</footer>
+	</div>
+</body>
+</html>

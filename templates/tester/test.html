@@ -1,32 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна</title>
     {% load static %}
+    <link rel="stylesheet" href="{% static 'general/css/style.css' %}">
+    <link rel="icon" href="{% static 'general/image/spid.png' %}" type="image/x-icon">
     <script src="{% static 'general/js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'tester/js/loader.js' %}"></script>
 </head>
+
 <body>
-<form action="{% static '' %}">
-    <select id="sizeSelector" >
-        <option id="350x350"    value ="245760">240K</option>
-        <option id="500x500"    value="505856">494K</option>
-        <option id="750x750"    value="1153433">1.1M</option>
-        <option id="1000x1000"  value="1992294">1.9M</option>
-        <option id="1500x1500"  value="4508876">4.3M</option>
-        <option id="2000x2000" value="7864320">7.5M</option>
-        <option id="2500x2500"  value="12582912">12M</option>
-        <option id="3000x3000"  value="17825792">17M</option>
-        <option id="3500x3500"  value="24117248">23M</option>
-        <option id="4000x4000"  value="31457280">30M</option>
-    </select>
-    <select id="serverSelector"  >
-        <option value="http://speedtest.omegatelecom.ua/speedtest/">Kiev Omegatelecom</option>
-        <option value="http://speedtest.point.lviv.ua/speedtest/">Lviv PointNet</option>
-    </select>
-    <input id="runTest" type="submit" value="test">
-    <p id="event"></p>
-</form>
+    <div class="Container">
+        <header>
+            <div class="Header">
+                <h1>SPIDTest</h1>
+            </div>
+        </header>
+
+        <nav class="NavTop">
+            <a href="../test" class="navtop"><b>Головна</b></a>
+            <a href="../history"><b>Історія</b></a>
+            <a href="../signup"><b>Реєстрація</b></a>
+            <a href="../signin"><b>Увійти</b></a>
+        </nav>
+
+        <main>
+            <form action="{% static '' %}" id="form">
+                <label for="size">Виберіть розмір:</label>
+                {% comment %}
+                <input name="size" type="text" list="sizeSelector" id="size" autocomplete="off" required>
+                {% endcomment %}
+                <select id="sizeSelector" >
+                    <option id="350x350"    value ="245760">240K</option>
+                    <option id="500x500"    value="505856">494K</option>
+                    <option id="750x750"    value="1153433">1.1M</option>
+                    <option id="1000x1000"  value="1992294">1.9M</option>
+                    <option id="1500x1500"  value="4508876">4.3M</option>
+                    <option id="2000x2000" value="7864320">7.5M</option>
+                    <option id="2500x2500"  value="12582912">12M</option>
+                    <option id="3000x3000"  value="17825792">17M</option>
+                    <option id="3500x3500"  value="24117248">23M</option>
+                    <option id="4000x4000"  value="31457280">30M</option>
+                </select>
+
+                <label for="server">Виберіть сервер:</label>
+                {% comment %}
+                <input name="server" type="text" list="serverSelector" id="server" autocomplete="off" required>
+                {% endcomment %}
+                <select id="serverSelector"  >
+                    <option value="http://speedtest.omegatelecom.ua/speedtest/">Kiev Omegatelecom</option>
+                    <option value="http://speedtest.point.lviv.ua/speedtest/">Lviv PointNet</option>
+                </select>
+
+                <input id="runTest" type="submit" value="TEST" class="Submit">
+                <p id="event"></p>
+            </form>
+        </main>
+
+        <footer>
+            <span>© Практика 2018. Тест на ВІЛ (Високошвидкісний Інтернет Літає?). Всі права захищені. v.2.1.1</span>
+        </footer>
+    </div>
 </body>
 </html>
