@@ -1,0 +1,6 @@
+*.log
+*.pot
+*.pyc
+
+practics/.idea/
+practics/db.sqlite3
