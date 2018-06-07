@@ -47,8 +47,7 @@
                 </select>
 
                 <label for="server">Виберіть сервер:</label>
-                {% comment %}
-                <input name="server" type="text" list="serverSelector" id="server" autocomplete="off" required>
+                {% comment %}                <input name="server" type="text" list="serverSelector" id="server" autocomplete="off" required>
                 {% endcomment %}
                 <select id="serverSelector"  >
                     <option value="http://speedtest.omegatelecom.ua/speedtest/">Kiev Omegatelecom</option>
@@ -56,8 +55,17 @@
                 </select>
 
                 <input id="runTest" type="submit" value="TEST" class="Submit">
-                <p id="event"></p>
+                <input id="randomServer" type="submit" value="МЕНІ ПОВЕЗЕ!" class="Submit">
+                <br>
+                <a href="#"><img class="SocNet" src="{% static 'general/image/upload.png' %}" alt=":("></a>
+                <p id="download" class="Event Pading" >Середня швидкість скачування: </p>
+                <a href="#"><img class="SocNet" src="{% static 'general/image/download.svg' %}" alt=":("></a>
+                <p id="upload" class="Event Pading">Середня швидкість завантаження: </p>
+                <p id="event" class="Event"></p>
             </form>
+
+
+
         </main>
 
         <footer>

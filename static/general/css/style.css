@@ -1,3 +1,4 @@
+
 /* HTML5 display-role reset for older browsers */
 article, aside, figure, footer, header, main, nav, section, figcaption {
 	display: block;
@@ -80,17 +81,25 @@ footer {
 	padding: 5px 10px;
 	width: auto;
 	height: 50px;
-	background: rgba(0, 0, 0, .4);
+	background-color: white;
+    color: black;
+    border: 2px solid red;
+	transition-duration: 0.4s;
+    /*
 	display: block;
-	border: none;
-	border: 2px solid black;
+    */
+	border-radius: 4px;
+
 	font-size: 21px;
 	margin: 0 auto;
-	color: white;
+
 }
 
+
+
 .Submit:hover {
-	background: rgba(0, 0, 0, .3);
+	 background-color: red;
+    color: white;
 }
 
 
@@ -109,7 +118,7 @@ label {
 	color: white;
 	border: 2px solid black;
 	border-right: none;
-    margin: 10px 0px;
+    margin: 10px 0;
 }
 
 select, input {
@@ -120,7 +129,7 @@ select, input {
 	border: 2px solid black;
 	color: #000;
 	border-left: none;
-	margin: 10px 0px;
+	margin: 10px 0;
 }
 
 
@@ -131,4 +140,20 @@ option {
 form {
 	width: 450px;
 	margin: 0 auto;
+}
+
+.Event {
+	font-size: 20px;
+/*	float: left;*/
+}
+
+
+
+
+/* Картинки для зв'зку */
+.SocNet {
+	width: 50px;
+	height: 50px;
+	border: none;
+	margin-top: 20px;
 }
