@@ -1,7 +1,5 @@
-$(document).ready(function () {
-   $('#runTest').click(function (event) {
-        event.preventDefault();
-
+$(document).ready(function ()
+{
         var _downloadSpeed = 0;
         var _uploadSpeed =  0;
 
@@ -15,6 +13,7 @@ $(document).ready(function () {
         var data = 'a'.repeat(downloadSize/2);
 
         var url =server+"random"+file+".jpg";
+
         function onDownload()
         {
             document.getElementById("event").innerHTML= "Testing download speed. Please wait"
@@ -53,7 +52,7 @@ $(document).ready(function () {
                         var speedBps = (bitsLoaded / downloadDuration).toFixed(2);
                         var speedKbps = (speedBps / 1024).toFixed(2);
                         var speedMbps = (speedKbps / 1024).toFixed(2);
-                        alert("Your avarage download speed is\n" + speedBps + " bps;\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;");
+                        document.getElementById("upload").innerHTML= "Середня швидкість завантаження:\n" + speedBps + " bps;\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;"
                         onUpload();
                         counter = 0;
 
@@ -98,7 +97,7 @@ $(document).ready(function () {
                 var speedBps = (bitsLoaded / uploadDuration).toFixed(2);
                 var speedKbps = (speedBps / 1024).toFixed(2);
                 var speedMbps = (speedKbps / 1024).toFixed(2);
-                alert("Your avarage upload speed is\n" + speedBps + " bps;\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;");
+                document.getElementById("upload").innerHTML= "Середня швидкість завантаження:\n" + speedBps + " bps;\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;"
                 $.ajax({
                     type: 'POST',
                     url: "/tester/save/",
@@ -112,7 +111,28 @@ $(document).ready(function () {
                     }
                 });
             }
+            function getRandom(min, max)
+            {
+                return Math.random()*(max - min) + min;
+            }
         }
+
+
+   $('#runTest').click(function (event) {
+         _downloadSpeed = 0;
+         _uploadSpeed =  0;
+
+         downloadDuration = 0;
+         uploadDuration = 0;
+
+         counter = 0;
+        event.preventDefault();
+ file = $('#sizeSelector option:selected').attr('id');
+ server =$('#serverSelector option:selected').val();
+ downloadSize = $('#sizeSelector option:selected').val();
+ data = 'a'.repeat(downloadSize/2);
+
+ url =server+"random"+file+".jpg";
 
         onDownload();
         MeasureDownloadSpeed();
@@ -120,4 +140,22 @@ $(document).ready(function () {
 
 
    });
+   $('#randomServer').click(function(event)
+   {
+         _downloadSpeed = 0;
+         _uploadSpeed =  0;
+
+         downloadDuration = 0;
+         uploadDuration = 0;
+
+         counter = 0;
+         file = $('#sizeSelector option:selected').attr('id');
+         server =$('#serverSelector option:selected').val();
+         downloadSize = $('#sizeSelector option:selected').val();
+         data = 'a'.repeat(downloadSize/2);
+
+         url =server+"random"+file+".jpg";
+       event.preventDefault();
+
+   })
 });
