@@ -1,0 +1,6 @@
+*.log
+*.pot
+*.pyc
+
+project/.idea/
+project/db.sqlite3
