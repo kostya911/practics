@@ -13,11 +13,14 @@ $(document).ready(function () {
         var data = 'a'.repeat(downloadSize/2);
 
         var url =server+"random"+file+".jpg";
-        function onStartMsg()
+        function onDownload()
         {
-            document.getElementById("event").innerHTML= "Start testing. Please wait"
+            document.getElementById("event").innerHTML= "Testing download speed. Please wait"
         }
-        function onEndMsg() {
+        function onUpload() {
+            document.getElementById("event").innerHTML= "Testing upload speed. Test will be ready soon "
+        }
+        function onEnd(){
             document.getElementById("event").innerHTML= "Finished testing"
         }
 
@@ -49,9 +52,11 @@ $(document).ready(function () {
                         var speedKbps = (speedBps / 1024).toFixed(2);
                         var speedMbps = (speedKbps / 1024).toFixed(2);
                         alert("Your avarage download speed is\n" + speedBps + " bps;\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;");
-                        onEndMsg();
+                        onUpload();
                         counter = 0;
+                        onUpload();
                         MeasureUploadSpeed();
+
             }
         }
 
@@ -71,7 +76,7 @@ $(document).ready(function () {
                     type: 'POST',
                     crossDomain: true,
                     crossOrigin: true,
-                    url: url,
+                    url: server+"/latency.txt?nnn="+startTime,
                     data: data,
                     success: function () {
                         var endTime = (new Date()).getTime();
@@ -83,6 +88,7 @@ $(document).ready(function () {
             }
             else
             {
+                onEnd();
                 uploadDuration /= 1000;
                 var bitsLoaded = downloadSize * 8*5;
                 var speedBps = (bitsLoaded / uploadDuration).toFixed(2);
@@ -92,8 +98,9 @@ $(document).ready(function () {
             }
         }
 
-        onStartMsg();
+        onDownload();
         MeasureDownloadSpeed();
+
 
    });
 });

@@ -28,7 +28,19 @@
         </nav>
 
         <main>
-
+            <form action="#" id="formReg">
+				<p>
+					<label for="logun">Введіть логін:</label>
+					<input id="login" type="text" placeholder="Введіть логін:" title="Введіть логін. Приклад: vasya228" required autofocus>
+				</p>
+				<p>
+					<label for="pass">Введіть пароль:</label>
+					<input name = "pass" id="pass" type="password" placeholder="Введіть пароль" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Латиниця + нижній регістр + верхній регістр + цифри,  без спецсимволів. Пример: asd12GDew" required>
+				</p>
+				<p>
+					<input type="submit" value="Вхід" id="submit" class="Submit">
+				</p>
+			</form>
         </main>
 
         <footer>
