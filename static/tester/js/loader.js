@@ -51,7 +51,7 @@ $(document).ready(function () {
                         var speedBps = (bitsLoaded / downloadDuration).toFixed(2);
                         var speedKbps = (speedBps / 1024).toFixed(2);
                         var speedMbps = (speedKbps / 1024).toFixed(2);
-                        document.getElementById("download").innerHTML= "Середня швидкість скачування:\n" + speedBps + " bps;\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;"
+                        document.getElementById("download").innerHTML= "Середня швидкість скачування:\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;"
                         onUpload();
                         counter = 0;
                         onUpload();
@@ -94,7 +94,7 @@ $(document).ready(function () {
                 var speedBps = (bitsLoaded / uploadDuration).toFixed(2);
                 var speedKbps = (speedBps / 1024).toFixed(2);
                 var speedMbps = (speedKbps / 1024).toFixed(2);
-                document.getElementById("upload").innerHTML= "Середня швидкість завантаження:\n" + speedBps + " bps;\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;"
+                document.getElementById("upload").innerHTML= "Середня швидкість завантаження:\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;"
             }
         }
 
