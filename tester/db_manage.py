@@ -1,15 +1,19 @@
+from django.http import JsonResponse
 from . import models
 
+
 def save(request):
-    upload = request.POST["upload"]
-    download = request.POST["download"]
+    upload = float(request.POST["upload"])
+    download = float(request.POST["download"])
 
-    user = request.user
-    if user == "AnonymousUser":
-        user = None
+    user = None
+    if request.user.is_authenticated:
+        user = request.user
 
-    var = models.Results(user=user,upload=upload, download=download, exipire_date=None)
+    var = models.Results(user=user,upload=upload, download=download, expire_date=None)
     var.save()
+    return JsonResponse("Success", safe=False)
+
 
 def get_data(request):
     upload = float(request.POST['upload'])
