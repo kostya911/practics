@@ -29,6 +29,7 @@
 
         <main>
             <form action="{% static '' %}" id="form">
+                {% csrf_token %}
                 <label for="size">Виберіть розмір:</label>
                 {% comment %}
                 <input name="size" type="text" list="sizeSelector" id="size" autocomplete="off" required>
@@ -50,8 +51,8 @@
                 {% comment %}                <input name="server" type="text" list="serverSelector" id="server" autocomplete="off" required>
                 {% endcomment %}
                 <select id="serverSelector"  >
-                    <option value="http://speedtest.omegatelecom.ua/speedtest/">Kiev Omegatelecom</option>
-                    <option value="http://speedtest.point.lviv.ua/speedtest/">Lviv PointNet</option>
+                    <option id = "0"value="http://speedtest.omegatelecom.ua/speedtest/">Kiev Omegatelecom</option>
+                    <option id = "1"value="http://speedtest.point.lviv.ua/speedtest/">Lviv PointNet</option>
                 </select>
 
                 <input id="runTest" type="submit" value="TEST" class="Submit">
