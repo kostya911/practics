@@ -59,7 +59,7 @@ header {
 
 
 main {
-	height: 550px;
+	height: 575px;
 	background-color: #EAEAEA;
 	color: #000;
 	padding: 2% 15%;
@@ -151,9 +151,15 @@ form {
 
 
 /* Картинки для зв'зку */
-.SocNet {
-	width: 50px;
+.SocNet1 {
+	width: 40px;
 	height: 50px;
 	border: none;
 	margin-top: 20px;
+}
+
+.SocNet2 {
+	width: 50px;
+	height: 50px;
+	border: none;
 }

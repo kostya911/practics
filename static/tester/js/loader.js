@@ -15,7 +15,7 @@ $(document).ready(function () {
         var url =server+"random"+file+".jpg";
         function onDownload()
         {
-            document.getElementById("event").innerHTML= "Testing download speed. Please wait"
+            document.getElementById("event").innerHTML= "Testing download speed. Please wait..."
         }
         function onUpload() {
             document.getElementById("event").innerHTML= "Testing upload speed. Test will be ready soon "
