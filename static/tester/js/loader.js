@@ -2,6 +2,8 @@ $(document).ready(function () {
    $('#runTest').click(function (event) {
         event.preventDefault();
 
+        var _downloadSpeed = 0;
+        var _uploadSpeed =  0;
 
         var downloadDuration = 0;
         var uploadDuration = 0;
@@ -51,9 +53,11 @@ $(document).ready(function () {
                         var speedBps = (bitsLoaded / downloadDuration).toFixed(2);
                         var speedKbps = (speedBps / 1024).toFixed(2);
                         var speedMbps = (speedKbps / 1024).toFixed(2);
-                        document.getElementById("download").innerHTML= "Середня швидкість скачування:\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;"
+                        alert("Your avarage download speed is\n" + speedBps + " bps;\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;");
                         onUpload();
                         counter = 0;
+
+                        _downloadSpeed = speedMbps;
                         onUpload();
                         MeasureUploadSpeed();
 
@@ -94,12 +98,25 @@ $(document).ready(function () {
                 var speedBps = (bitsLoaded / uploadDuration).toFixed(2);
                 var speedKbps = (speedBps / 1024).toFixed(2);
                 var speedMbps = (speedKbps / 1024).toFixed(2);
-                document.getElementById("upload").innerHTML= "Середня швидкість завантаження:\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;"
+                alert("Your avarage upload speed is\n" + speedBps + " bps;\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;");
+                $.ajax({
+                    type: 'POST',
+                    url: "/tester/save/",
+                    data: {
+                        upload:speedMbps,
+                        download: _downloadSpeed,
+                        'csrfmiddlewaretoken': $('input[name=\'csrfmiddlewaretoken\']').val()
+                    },
+                    success: function () {
+                        console.log("Saved in db");
+                    }
+                });
             }
         }
 
         onDownload();
         MeasureDownloadSpeed();
+
 
 
    });
