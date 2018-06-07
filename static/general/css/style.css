@@ -1,68 +1,67 @@
-
 /* HTML5 display-role reset for older browsers */
 article, aside, figure, footer, header, main, nav, section, figcaption {
-	display: block;
+  display: block;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Задаємо фон, шрифт і забираємо стандартні відступи */
 body {
-/*	background-color: #fffff2;
-*/	/*background: url(../images/bg.jpg) 100% 100%;
-	background-size: cover;
-	background-attachment: scroll;*/
-	font-family: Arial, Helvetica, sans-serif;
-	margin: 0;
+/*  background-color: #fffff2;
+*/  /*background: url(../images/bg.jpg) 100% 100%;
+  background-size: cover;
+  background-attachment: scroll;*/
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 header {
-	text-align: center;
-	font-size: 37px;
-	font-weight: bolder;
-	letter-spacing: 20px;
-	background-color: #fff;
-	color: #000;
-	margin: 0 15%;
-	padding: 20px 0 20px 0;
+  text-align: center;
+  font-size: 37px;
+  font-weight: bolder;
+  letter-spacing: 20px;
+  background-color: #fff;
+  color: #000;
+  margin: 0 15%;
+  padding: 20px 0 20px 0;
 }
 
 
 /* Верхній блок навігації */
 .NavTop {
-	background: #ff3540;
-	text-align: center;
-	padding: 0 5%;
+  background: #ff3540;
+  text-align: center;
+  padding: 0 5%;
 }
 
 /* Посилання у блоці навігації */
 .NavTop a {
-	color: white;
-	text-decoration: none;
-	line-height: 3;
-	display: inline-block;
-	padding: 0 3%;
-	font-size: 19px;
+  color: white;
+  text-decoration: none;
+  line-height: 3;
+  display: inline-block;
+  padding: 0 3%;
+  font-size: 19px;
 }
 
 /* При наведенні на посилання у блоці навінації*/
 
 .NavTop a:hover {
-	background: rgba(0,0,0, .7)
+  background: rgba(0,0,0, .7)
 }
 
 
 .navtop {
-	background: #202020;
+  background: #202020;
 }
 
 
 main {
-	height: 560px;
-	background-color: #EAEAEA;
-	color: #000;
-	padding: 2% 15%;
+  height: 580px;
+  background-color: #EAEAEA;
+  color: #000;
+  padding: 2% 15%;
 }
 
 header, main {
@@ -70,66 +69,66 @@ header, main {
 }
 
 footer {
-	background-color: #202020;
-	text-align: center;
-	font-size: 20px;
-	color: #fff;
-	padding: 80px 20px 70px 20px;
+  background-color: #202020;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  padding: 80px 20px 70px 20px;
 }
 
 .Submit {
-	padding: 5px 10px;
-	width: auto;
-	height: 50px;
-	background-color: white;
+  padding: 5px 10px;
+  width: auto;
+  height: 50px;
+  background-color: white;
     color: black;
     border: 2px solid red;
-	transition-duration: 0.4s;
+  transition-duration: 0.4s;
     /*
-	display: block;
+  display: block;
     */
-	border-radius: 4px;
+  border-radius: 4px;
 
-	font-size: 21px;
-	margin: 0 auto;
+  font-size: 21px;
+  margin: 0 auto;
 
 }
 
 
 
 .Submit:hover {
-	 background-color: red;
+   background-color: red;
     color: white;
 }
 
 
 label, select, input {
-	border: none;
-	height: 50px;
-	font-size: 18px;
+  border: none;
+  height: 50px;
+  font-size: 18px;
 }
 
 label {
-	width: 200px;
-	padding: 15px;
-  	float: left;
-	cursor: pointer;
-	background: rgba(0,0,0, .4);
-	color: white;
-	border: 2px solid black;
-	border-right: none;
+  width: 200px;
+  padding: 15px;
+    float: left;
+  cursor: pointer;
+  background: rgba(0,0,0, .4);
+  color: white;
+  border: 2px solid black;
+  border-right: none;
     margin: 10px 0;
 }
 
 select, input {
-	padding-left: 15px;
+  padding-left: 15px;
 
-	width: 250px;
+  width: 250px;
     background: #ffffff;
-	border: 2px solid black;
-	color: #000;
-	border-left: none;
-	margin: 10px 0;
+  border: 2px solid black;
+  color: #000;
+  border-left: none;
+  margin: 10px 0;
 }
 
 
@@ -138,13 +137,13 @@ option {
 }
 
 form {
-	width: 450px;
-	margin: 0 auto;
+  width: 450px;
+  margin: 0 auto;
 }
 
 .Event {
-	font-size: 20px;
-/*	float: left;*/
+  font-size: 20px;
+/*  float: left;*/
 }
 
 
@@ -152,13 +151,13 @@ form {
 
 /* Картинки для зв'зку */
 .SocNet1 {
-	width: 40px;
-	height: 50px;
-	border: none;
-	margin-top: 20px;
+  width: 40px;
+  height: 50px;
+  border: none;
+  margin-top: 20px;
 }
 .SocNet2 {
-	width: 50px;
-	height: 50px;
-	border: none;
+  width: 50px;
+  height: 50px;
+  border: none;
 }

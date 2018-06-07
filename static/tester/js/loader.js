@@ -16,13 +16,13 @@ $(document).ready(function ()
 
         function onDownload()
         {
-            document.getElementById("event").innerHTML= "Testing download speed. Please wait"
+            document.getElementById("event").innerHTML= "Тестування швидкості завантаження. Будь ласка зачекайте..."
         }
         function onUpload() {
-            document.getElementById("event").innerHTML= "Testing upload speed. Test will be ready soon "
+            document.getElementById("event").innerHTML= "Тестування швидкості вивантаження. Будь ласка зачекайте..."
         }
         function onEnd(){
-            document.getElementById("event").innerHTML= "Finished testing"
+            document.getElementById("event").innerHTML= "Тестування завершено"
         }
 
         function MeasureDownloadSpeed() {
@@ -52,7 +52,7 @@ $(document).ready(function ()
                         var speedBps = (bitsLoaded / downloadDuration).toFixed(2);
                         var speedKbps = (speedBps / 1024).toFixed(2);
                         var speedMbps = (speedKbps / 1024).toFixed(2);
-                        document.getElementById("upload").innerHTML= "Середня швидкість завантаження:\n" + speedBps + " bps;\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;"
+                        document.getElementById("download").innerHTML= "Середня швидкість завантаження:\n" + speedBps + " bps;\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;"
                         onUpload();
                         counter = 0;
 
@@ -119,6 +119,7 @@ $(document).ready(function ()
 
 
    $('#runTest').click(function (event) {
+       event.preventDefault();
          _downloadSpeed = 0;
          _uploadSpeed =  0;
 
@@ -127,12 +128,12 @@ $(document).ready(function ()
 
          counter = 0;
         event.preventDefault();
- file = $('#sizeSelector option:selected').attr('id');
- server =$('#serverSelector option:selected').val();
- downloadSize = $('#sizeSelector option:selected').val();
- data = 'a'.repeat(downloadSize/2);
+         file = $('#sizeSelector option:selected').attr('id');
+         server =$('#serverSelector option:selected').val();
+         downloadSize = $('#sizeSelector option:selected').val();
+         data = 'a'.repeat(downloadSize/2);
 
- url =server+"random"+file+".jpg";
+         url =server+"random"+file+".jpg";
 
         onDownload();
         MeasureDownloadSpeed();
@@ -142,6 +143,7 @@ $(document).ready(function ()
    });
    $('#randomServer').click(function(event)
    {
+       event.preventDefault();
          _downloadSpeed = 0;
          _uploadSpeed =  0;
 
@@ -155,7 +157,7 @@ $(document).ready(function ()
          data = 'a'.repeat(downloadSize/2);
 
          url =server+"random"+file+".jpg";
-       event.preventDefault();
+
 
    })
 });
