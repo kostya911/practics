@@ -21,16 +21,16 @@
         </header>
 
         <nav class="NavTop">
-            <a href="../test" class="navtop"><b>Головна</b></a>
-            <a href="../history"><b>Історія</b></a>
-            <a href="../signup"><b>Реєстрація</b></a>
-            <a href="../signin"><b>Увійти</b></a>
+            <a href="../test" class="navtop"><b>ГОЛОВНА</b></a>
+            <a href="../history"><b>ІСТОРІЯ</b></a>
+            <a href="../signup"><b>РЕЄСТРАЦІЯ</b></a>
+            <a href="../signin"><b>УВІЙТИ</b></a>
         </nav>
 
         <main>
             <form action="{% static '' %}" id="form">
                 {% csrf_token %}
-                <label for="size">Виберіть розмір:</label>
+                <label for="size">ВИБЕРІТЬ РОЗМІР:</label>
                 {% comment %}
                 <input name="size" type="text" list="sizeSelector" id="size" autocomplete="off" required>
                 {% endcomment %}
@@ -40,14 +40,14 @@
                     <option id="750x750"    value="1153433">1.1M</option>
                     <option id="1000x1000"  value="1992294">1.9M</option>
                     <option id="1500x1500"  value="4508876">4.3M</option>
-                    <option id="2000x2000" value="7864320">7.5M</option>
+                    <option id="2000x2000"  value="7864320">7.5M</option>
                     <option id="2500x2500"  value="12582912">12M</option>
                     <option id="3000x3000"  value="17825792">17M</option>
                     <option id="3500x3500"  value="24117248">23M</option>
                     <option id="4000x4000"  value="31457280">30M</option>
                 </select>
 
-                <label for="server">Виберіть сервер:</label>
+                <label for="server">ВИБЕРІТЬ ТЕСТ:</label>
                 {% comment %}                <input name="server" type="text" list="serverSelector" id="server" autocomplete="off" required>
                 {% endcomment %}
                 <select id="serverSelector"  >
@@ -58,14 +58,24 @@
                 <input id="runTest" type="submit" value="ТЕСТ" class="Submit">
                 <input id="randomServer" type="submit" value="МЕНІ ПОВЕЗЕ" class="Submit">
                 <br>
-                <a href="#"><img class="SocNet1" src="{% static 'general/image/download.svg' %}" alt=":("></a>
-                <p id="download" class="Event" >Середня швидкість завантаження: </p>
-                <a href="#"><img class="SocNet2" src="{% static 'general/image/upload.png' %}" alt=":("></a>
-                <p id="upload" class="Event">Середня швидкість вивантаження: </p>
-                <p id="event" class="Event"></p>
+
+
+
             </form>
 
+            <figure>
+                <div class="imgInside">
+                    <a href="#"><img class="SocNet1 fix" src="{% static 'general/image/download.svg' %}" alt=":("></a>
+                    <p id="download" class="Event fix fix2" >Середня швидкість завантаження: </p>
+                </div>
 
+                <div class="imgInside">
+                    <a href="#"><img class="SocNet2 fix" src="{% static 'general/image/upload.png' %}" alt=":("></a>
+                    <p id="upload" class="Event fix fix2">Середня швидкість вивантаження: </p>
+                </div>
+                                <p id="event" class="Event"></p>
+
+            </figure>
 
         </main>
 

@@ -7,13 +7,17 @@ $(document).ready(function ()
         var uploadDuration = 0;
 
         var counter = 0;
-        var file = $('#sizeSelector option:selected').attr('id');
-        var server =$('#serverSelector option:selected').val();
-        var downloadSize = $('#sizeSelector option:selected').val();
-        var data = 'a'.repeat(downloadSize/2);
+        var file = "";
+        var server ="";
+        var downloadSize = 0;
+        var data = 0;
 
-        var url =server+"random"+file+".jpg";
 
+
+
+        function getRandomNum(minimum, maximum) {
+            return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum; //generate random id
+        }
         function onDownload()
         {
             document.getElementById("event").innerHTML= "Тестування швидкості завантаження. Будь ласка зачекайте..."
@@ -52,7 +56,7 @@ $(document).ready(function ()
                         var speedBps = (bitsLoaded / downloadDuration).toFixed(2);
                         var speedKbps = (speedBps / 1024).toFixed(2);
                         var speedMbps = (speedKbps / 1024).toFixed(2);
-                        document.getElementById("download").innerHTML= "Середня швидкість завантаження:\n" + speedBps + " bps;\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;"
+                        document.getElementById("download").innerHTML= "Середня швидкість завантаження:\n"  + speedKbps + " kbs;\n" + speedMbps + " mbs;"
                         onUpload();
                         counter = 0;
 
@@ -62,7 +66,6 @@ $(document).ready(function ()
 
             }
         }
-
 
         function MeasureUploadSpeed()
         {
@@ -97,7 +100,7 @@ $(document).ready(function ()
                 var speedBps = (bitsLoaded / uploadDuration).toFixed(2);
                 var speedKbps = (speedBps / 1024).toFixed(2);
                 var speedMbps = (speedKbps / 1024).toFixed(2);
-                document.getElementById("upload").innerHTML= "Середня швидкість завантаження:\n" + speedBps + " bps;\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;"
+                document.getElementById("upload").innerHTML= "Середня швидкість завантаження:\n" + speedKbps + " kbs;\n" + speedMbps + " mbs;"
                 $.ajax({
                     type: 'POST',
                     url: "/tester/save/",
@@ -149,15 +152,24 @@ $(document).ready(function ()
 
          downloadDuration = 0;
          uploadDuration = 0;
-
          counter = 0;
+
+         //var minimum = 0;
+         //var maximum = 1 ;
+
+         var id = getRandomNum(0,1);
+
          file = $('#sizeSelector option:selected').attr('id');
-         server =$('#serverSelector option:selected').val();
+         server =$('#'+id).val();
          downloadSize = $('#sizeSelector option:selected').val();
          data = 'a'.repeat(downloadSize/2);
 
+        $('#'+id).attr('selected','selected');
          url =server+"random"+file+".jpg";
+         console.log(id+file+server+downloadSize);
 
+         onDownload();
+        MeasureDownloadSpeed();
 
    })
 });

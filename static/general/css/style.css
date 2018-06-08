@@ -58,7 +58,7 @@ header {
 
 
 main {
-  height: 580px;
+  height: 470px;
   background-color: #EAEAEA;
   color: #000;
   padding: 2% 15%;
@@ -99,6 +99,8 @@ footer {
 .Submit:hover {
    background-color: red;
     color: white;
+    font-weight: bolder;
+
 }
 
 
@@ -109,7 +111,7 @@ label, select, input {
 }
 
 label {
-  width: 200px;
+  width: 250px;
   padding: 15px;
     float: left;
   cursor: pointer;
@@ -118,6 +120,7 @@ label {
   border: 2px solid black;
   border-right: none;
     margin: 10px 0;
+
 }
 
 select, input {
@@ -137,27 +140,50 @@ option {
 }
 
 form {
-  width: 450px;
+  width: 500px;
   margin: 0 auto;
 }
 
 .Event {
   font-size: 20px;
-/*  float: left;*/
+    font-weight: bolder;
+
+}
+.fix {
+    /*
+  width: 100%;
+    */
+  float: left;
+}
+.fix2 {
+  padding: 15px  0 0 20px;
 }
 
+.imgInside:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
+figure {
+  width: 700px;
+  margin: 0 auto;
+}
 
 
 /* Картинки для зв'зку */
 .SocNet1 {
-  width: 40px;
+  width: 50px;
   height: 50px;
   border: none;
   margin-top: 20px;
+  display: block;
 }
 .SocNet2 {
   width: 50px;
   height: 50px;
   border: none;
+  display: block;
+    margin-top: 20px;
+
 }
