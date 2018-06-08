@@ -19,6 +19,7 @@ from . import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('auth-social/', include('social_django.urls')),
     path('admin/', admin.site.urls),
     path('tester/', include('tester.urls')),
 ]

@@ -28,6 +28,8 @@
         </nav>
 
         <main>
+             {% csrf_token %}
+             <a href="{% url 'social:begin' 'facebook' %}" class="btn" type="button"><span>Facebook</span></a>
             <form action="#" id="formReg">
         <p>
           <label for="logun">ВВЕДІТЬ ЛОГІН:</label>
