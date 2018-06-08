@@ -48,7 +48,7 @@ LOGIN_REDIRECT_URL = '/'
 # Application definition
 
 INSTALLED_APPS = [
-    'social_django'
+    'social_django',
     'tester',
     'django.contrib.admin',
     'django.contrib.auth',
