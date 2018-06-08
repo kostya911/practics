@@ -25,7 +25,9 @@ SECRET_KEY = 'p1he9iv#w5x$ytfen*!1z(_d)_w7#*m+ho)fh&)miv5tqqdx(w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['52.41.211.159',
+ALLOWED_HOSTS = [ 'www.spid-test.co.uk',
+                  'spid-test.co.uk',
+                  '52.24.157.43',
                  'localhost',
                  '127.0.0.1']
 
@@ -47,13 +49,14 @@ LOGIN_REDIRECT_URL = '/'
 
 INSTALLED_APPS = [
     'social_django'
+    'tester',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'tester'
+    'django.contrib.staticfiles'
+
 ]
 
 MIDDLEWARE = [

@@ -10,7 +10,7 @@ def save(request):
     if request.user.is_authenticated:
         user = request.user
 
-    var = models.Results(user=user,upload=upload, download=download, expire_date=None)
+    var = models.Results(user=user, upload=upload, download=download, expire_date=None)
     var.save()
     return JsonResponse("Success", safe=False)
 

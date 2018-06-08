@@ -10,6 +10,7 @@
     <link rel="icon" href="{% static 'general/image/spid.png' %}" type="image/x-icon">
     <script src="{% static 'general/js/jquery-3.3.1.min.js' %}"></script>
     <script src="{% static 'tester/js/loader.js' %}"></script>
+    <script src="{% static 'tester/js/history.js' %}"></script>
 </head>
 
 <body>
@@ -28,7 +29,11 @@
         </nav>
 
         <main>
-
+            <form   id="textArea" action="{% static '' %}" class="formReg" method="post">
+                <p class="pHistory"><b>ІСТОРІЯ ТЕСТІВ</b></p>
+                <p><textarea rows="20" cols="100" name="text"></textarea></p>
+                <p><input type="submit" value="ЗАГРУЗИТИ" class="Submit" id="submitFormHist"></p>
+            </form>
         </main>
 
         <footer>
